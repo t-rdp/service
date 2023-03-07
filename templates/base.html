@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport"
+    content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,viewport-fit=cover" />
+  <title>{% block title %}{% endblock %} | 天空岛</title>
+  <link rel="icon" href="https://t.rdpstudio.top/files/00c81708-9c8c-4822-86e3-93ab02f77218">
+  <link rel="apple-touch-icon" href="https://t.rdpstudio.top/files/00c81708-9c8c-4822-86e3-93ab02f77218">
+  <link rel="stylesheet" href="https://unpkg.com/mdui@1.0.2/dist/css/mdui.min.css" />
+  <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
+  <style>
+    .cointainer {
+      max-width: 80%;
+      margin: auto;
+    }
+    a {
+      color: blue;
+    }
+  </style>
+  {% block header %}{% endblock %}
+</head>
+
+<body class="mdui-theme-primary-blue">
+  <div class="mdui-appbar">
+    <div class="mdui-toolbar mdui-color-theme" style="color: #fff!important;">
+      <a href="/" class="mdui-btn mdui-btn-icon" style="margin-right: 1px;"><i class="mdui-icon material-icons">account_circle</i></a>
+      <a href="/"><span class="mdui-typo-title" style="margin-left: 0px;">天空岛</span></a>
+      <div class="mdui-toolbar-spacer"></div>
+      <a href="javascript:window.location.reload();" class="mdui-btn mdui-btn-icon">
+        <i class="mdui-icon material-icons">refresh</i>
+      </a>
+    </div>
+  </div>
+  <div style="margin-top: 20px;"></div>
+  <div class="cointainer">
+    {% block body %}{% endblock %}
+    <br /><br /><div class="mdui-divider"></div><p>Copyright &copy; FANGTANG Network Technology.</p>
+  </div>
+  <script src="https://unpkg.com/mdui@1.0.2/dist/js/mdui.min.js"></script>
+  {% block scripts %}{% endblock %}
+</body>
+</html>

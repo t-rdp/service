@@ -1,0 +1,5 @@
+Flask
+requests
+toml
+gevent
+flask-cors

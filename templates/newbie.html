@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}答题{% endblock %}
+
+{% block header %}
+{% endblock %}
+
+{% block body %}
+<form method="post">
+    <p>欢迎来到天空岛入站考试，{{ ud["name"] }}。目前一共 {{ questions["length"] }} 题，答对 {{ questions["correct"] }} 题即可转正为正式会员，获得公开发布权限。</p>
+    {% for q in range(questions["length"]) %}
+        <div class="mdui-divider"></div>
+        <p>{{ q+1 }}. {{ questions[q|string]["name"] }}</p>
+        {% for i in range(questions[q|string]["length"]) %}
+            <label class="mdui-radio">
+                <input type="radio" name="q_{{ q }}" value="{{ i }}" required/>
+                <i class="mdui-radio-icon"></i>
+                {{ questions[q|string][i|string] }}
+            </label>&nbsp;&nbsp;&nbsp;
+        {% endfor %}
+    {% endfor %}
+    <br />
+    <div class="mdui-divider"></div>
+    <br />
+    <div class="h-captcha" data-sitekey="98a8f8ff-a007-4ea8-aaa0-e3b932118220" data-callback="showSubmit"></div>
+    <button class="mdui-btn mdui-btn-raised mdui-ripple" id="submit" disabled>交卷</button>
+</form>
+<script>
+    function showSubmit() {
+        document.getElementById("submit").disabled = false;
+    }
+</script>
+{% endblock %}
