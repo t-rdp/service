@@ -2,7 +2,7 @@ name: T Docker Build
 on:
   push:
     branches:
-      - 't'
+      - 'main'
 jobs:
   build:
     runs-on: ubuntu-latest
