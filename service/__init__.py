@@ -14,6 +14,7 @@ CORS(app, origins = "*", supports_credentials = True)
 
 # Load All Submodules
 import service.newbie
+import service.home
 
 # Load BP
 app.register_blueprint(route, url_prefix="/platform")
