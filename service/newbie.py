@@ -11,7 +11,7 @@ import misc.hcaptcha
 @authRequired()
 def newbie(*, id, ud, i):
     questions = json.load(open("questions.json", encoding="utf-8"))
-    return render_template("newbie.html", questions=questions, ud=ud)
+    return render_template("newbie.html", questions=questions, name=ud["name"] or ud["username"])
 
 @route.route("/newbie", methods=["POST"])
 @authRequired()

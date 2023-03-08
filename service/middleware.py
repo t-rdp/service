@@ -10,7 +10,7 @@ def authRequired():
             if token == None:
                 return misc.note.create_note("请先登录！<a href='/' style='color: blue;'>前往主站</a>。")
             try:
-                data = misc.misskey.misskey_post("i", {}, token)
+                data = misc.misskey.api_req("i", {}, token)
                 id = data["id"]
                 kw["id"] = id
                 kw["ud"] = data
