@@ -4,5 +4,5 @@ from service.middleware import authRequired
 
 @route.route("/home")
 @authRequired()
-def home(*, id, ud):
+def home(*, id, ud, i):
     return render_template("home.html")

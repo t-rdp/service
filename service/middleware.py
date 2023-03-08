@@ -14,6 +14,7 @@ def authRequired():
                 id = data["id"]
                 kw["id"] = id
                 kw["ud"] = data
+                kw["i"] = token
             except:
                 return misc.note.create_note("请先登录！<a href='/'>前往主站</a>。")
             return handler(*args, **kw)
